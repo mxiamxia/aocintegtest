@@ -40,6 +40,7 @@
       "logConfiguration": {
         "logDriver": "awslogs",
         "options": {
+          "awslogs-create-group": "True",
           "awslogs-group": "/ecs/ecs-cwagent-sidecar-emitter",
           "awslogs-region": "{{region}}",
           "awslogs-stream-prefix": "ecs"
@@ -65,6 +66,7 @@
       "logConfiguration": {
         "logDriver": "awslogs",
         "options": {
+          "awslogs-create-group": "True",
           "awslogs-group": "/ecs/ecs-cwagent-sidecar-collector",
           "awslogs-region": "{{region}}",
           "awslogs-stream-prefix": "ecs"
