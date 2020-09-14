@@ -9,12 +9,13 @@ public enum GenericConstants {
   DEFAULT_STACK_FILE_PATH(".aoc-stack.yml"),
   DEFAULT_REGION("us-west-2"),
   DEFAULT_S3_RELEASE_CANDIDATE_BUCKET("aoc-release-candidate"),
-  DEFAULT_S3_BUCKET("aws-opentelemetry-collector-test"),
+  DEFAULT_S3_BUCKET("aws-observability-collector-test"),
   DEFAULT_SSH_KEY_S3_BUCKET_NAME("aoc-ssh-key"),
   DEFAULT_TRACE_S3_BUCKET_NAME("trace-expected-data"),
+  DEFAULT_DOCKER_IMAGE_REPO_NAME("josephwy/aws-observability-collector"),
 
   // release related
-  PACKAGE_NAME_PREFIX("aws-opentelemetry-collector."),
+  PACKAGE_NAME_PREFIX("aws-observability-collector."),
   LOCAL_PACKAGES_DIR("build/packages"),
   GITHUB_SHA_FILE_NAME("GITHUB_SHA"),
 
@@ -54,12 +55,20 @@ public enum GenericConstants {
   CANDIDATE_DOWNLOAD_TO("build/candidate-downloaded.tar.gz"),
   CANDIDATE_UNPACK_TO("."),
 
-  //ECS
+  // ECS
   ECS_LAUNCH_TYPE("ecsLaunchType"),
   ECS_DEPLOY_MODE("ecsDeployMode"),
+  ECS_TASK_DEF("ecsTaskDef"),
   EC2_INSTANCE_ECS_TAG_VAL("aoc-integ-test-ecs"),
   ECS_SIDECAR_CLUSTER("aoc-sidecar-integ-test"),
-  AOC_IMAGE("josephwy/awscollector:"),
+
+  // EKS
+  AUTHENTICATOR_PATH("awsAuthenticatorPath"),
+  EKS_CLUSTER_NAME("eksClusterName"),
+  KUBECTL_PATH("kubectlPath"),
+  KUBECONFIG_PATH("kubeconfigPath"),
+  TEST_MANIFEST_NAME("eksTestManifestName"),
+  EKS_DEFAULT_TEST_MANIFEST("aoc-eks-sidecar"),
 
   // common constants
   EC2("EC2"),
@@ -67,7 +76,6 @@ public enum GenericConstants {
   DEFAULT("default"),
   AOC_PREFIX("aoc-"),
   AOC_PORT("55680"),
-
   ;
 
   private String val;

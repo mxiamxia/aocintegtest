@@ -1,8 +1,9 @@
 package com.amazon.aocagent.models;
 
+import com.amazon.aocagent.fileconfigs.ECSTaskDefTemplate;
 import com.amazon.aocagent.fileconfigs.ExpectedMetric;
-import com.amazon.aocagent.fileconfigs.OTConfig;
 import com.amazon.aocagent.fileconfigs.ExpectedTrace;
+import com.amazon.aocagent.fileconfigs.OTConfig;
 import com.amazon.aocagent.testamis.ITestAMI;
 import com.amazonaws.services.ec2.model.Subnet;
 import lombok.Data;
@@ -50,6 +51,9 @@ public class Context {
   /** ECS task execution role arn. */
   private String ecsExecutionRoleArn;
 
+  /** ECS task def. */
+  private ECSTaskDefTemplate ecsTaskDef;
+
   /** ECS data emitter image. */
   private String dataEmitterImage;
 
@@ -59,4 +63,24 @@ public class Context {
   /** Test resources region. */
   private String region;
 
+  /** EKS cluster attributes. */
+  private String eksEndpoint;
+
+  /** EKS cluster certificate. */
+  private String eksCertificate;
+
+  /** EKS cluster name. */
+  private String eksClusterName;
+
+  /** kubectl binary path. */
+  private String kubectlPath;
+
+  /** kubeconfig path. */
+  private String kubeconfigPath;
+
+  /** EKS iam authenticator binary path. */
+  private String iamAuthenticatorPath;
+
+  /** EKS test manifest file name. */
+  private String eksTestManifestName;
 }
